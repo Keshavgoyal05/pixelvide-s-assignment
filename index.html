@@ -1,0 +1,83 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>pixelworld's assignment</title>
+
+<script type="text/javascript">
+function shuffleList(list) {
+    for (let i = list.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [list[i], list[j]] = [list[j], list[i]];
+    }
+	return list
+}
+
+function display_groups(){
+var clubs=["Arsenal","Astana","Atlético","BATE","CSKA Moskva","Dinamo Zagreb",
+"Dynamo Kyiv","Galatasaray","Gent","Leverkusen","Lyon","M. Tel-Aviv","Malmö","Man. City","Man. United",
+"Mönchengladbach","Olympiacos","Porto","Real Madrid","Roma","Sevilla","Shakhtar Donetsk","Valencia","Wolfsburg"];
+var distinct_clubs=["Barcelona","Bayern","Benfica","Chelsea","Juventus","Paris","PSV","Zenit"];
+clubs=shuffleList(clubs);
+distinct_clubs=shuffleList(distinct_clubs);
+
+for(var i=0;i<8;i++){
+	if(i==0)
+		var id="Group A"
+	else if (i==1)
+		var id="Group B"
+	else if (i==2)
+		var id="Group C"
+	else if (i==3)
+		var id="Group D"
+	else if (i==4)
+		var id="Group E"
+	else if (i==5)
+		var id="Group F"
+	else if (i==6)
+		var id="Group G"
+	else if (i==7)
+		var id="Group H"
+	var ans="<b>"+id+"</b>"+"<br>"+distinct_clubs[i];
+	for(var j=i*3;j<(i*3)+3;j++){
+		ans+="<br>"+clubs[j];}
+	document.getElementById(id).innerHTML=ans;
+	}
+}
+document.body.style.zoom="100%"
+</script>
+
+
+<style>
+body {
+  background-image: url('UEFA.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+div{
+	font-size:25px;
+	color:white;
+	
+	
+}
+</style>
+<body>
+<div style="margin-left:20px;margin-right:20px;margin-top:300">
+  <div id="Group A" style="margin-left:100px;margin-top:0px;height:200px;width:350px"></div>
+  <div id="Group B" style="margin-left:450px;margin-top:-200px;height:200px;width:350px"></div>
+  <div id="Group C" style="margin-left:850px;margin-top:-200px;height:200px;width:350px"></div>
+  <div id="Group D" style="margin-left:1250px;margin-top:-200px;height:200px;width:350px"></div>
+  <div id="Group E" style="margin-left:100px;margin-top:10px;height:200px;width:350px"></div>
+  <div id="Group F" style="margin-left:450px;margin-top:-200px;height:200px;width:350px"></div>
+  <div id="Group G" style="margin-left:850px;margin-top:-200px;height:200px;width:350px"></div>
+  <div id="Group H" style="margin-left:1250px;margin-top:-200px;height:200px;width:350px"></div>
+</div>
+<script>
+window.onload=display_groups;
+</script>
+
+</body>
+</head>
+</html>
+
